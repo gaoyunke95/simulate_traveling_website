@@ -13,5 +13,6 @@ public interface UserService {
      * @param user
      * @return
      */
-    boolean register(User user);
+    public boolean register(User user);
+    public boolean active(String code);
 }

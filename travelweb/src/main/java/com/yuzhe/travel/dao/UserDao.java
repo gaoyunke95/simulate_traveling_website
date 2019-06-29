@@ -15,8 +15,18 @@ public interface UserDao {
     public User findByUsername(String username);
 
     /**
+     * find user by the active code;
+     * @param code
+     * @return
+     */
+    public User findByCode(String code);
+
+    /**
      * save user info
      * @param user
      */
     public void save(User user);
+
+    public void updateStatus(User user);
+
 }

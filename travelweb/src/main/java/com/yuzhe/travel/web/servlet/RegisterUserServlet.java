@@ -21,7 +21,7 @@ import java.util.Map;
  * @author Henry Gao
  * @date 2019-06-29 - 08:58
  */
-@WebServlet("/registerUserServlet")
+@WebServlet("/registerUser")
 public class RegisterUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

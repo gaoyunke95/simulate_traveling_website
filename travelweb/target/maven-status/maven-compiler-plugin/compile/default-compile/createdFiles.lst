@@ -18,3 +18,4 @@ com/yuzhe/travel/dao/impl/UserDaoImpl.class
 com/yuzhe/travel/domain/Favorite.class
 com/yuzhe/travel/web/servlet/RegisterUserServlet.class
 com/yuzhe/travel/domain/Seller.class
+com/yuzhe/travel/web/servlet/ActiveUserServlet.class
