@@ -108,7 +108,7 @@
 				//2.define regexp
 
 				var birthDay = $("#birthday").val();
-				var reg_birth = /^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$/;
+				var reg_birth = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
 
 				var flag =  reg_birth.test(birthDay);
 
@@ -125,13 +125,16 @@
 			$(function () {
 				$("#registerForm").submit(function(){
 					//如果这个方法没有返回值。或者返回true提交表单，如果false。不提交
+					//serialize() -> username = zhangsan&password=123
 					if (checkUsername() && checkPassword() && checkEmail() && checkName() && checkPhoneNumber() && checkBirthDay()) {
 						$.post("registerUserServlet",$(this).serialize(),function(data){
-
+							if (data.flag) {
+								location.href="register_ok.html";
+							} else {
+								$("#errorMsg").html(data.errorMsg);
+							}
 						});
 					}
-
-
 					return false;
 				});
 
@@ -156,7 +159,9 @@
     				<p>USER REGISTER</p>
     			</div>
     			<div class="rg_form_center">
-					
+					<div id="errorMsg" style="color:red;text-align:center">
+
+					</div>
 					<!--注册表单-->
     				<form id="registerForm" action="userRegisterServlet" method="post" >
 						<!--提交处理请求的标识符-->
@@ -175,7 +180,7 @@
     								<label for="password">密码</label>
     							</td>
     							<td class="td_right">
-    								<input type="password" id="password" name="password" placeholder="请输入密码">
+    								<input type="text" id="password" name="password" placeholder="请输入密码">
     							</td>
     						</tr>
     						<tr>
