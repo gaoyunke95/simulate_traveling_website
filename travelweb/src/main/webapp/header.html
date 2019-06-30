@@ -1,6 +1,6 @@
     <script>
         $(function(){
-            $.get("findUser",{},function(data){
+            $.get("/findUser",{},function(data){
                 var msg = "welcome back" + data.name;
                 $("#username_span").html(msg);
             });
