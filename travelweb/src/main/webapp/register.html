@@ -127,7 +127,7 @@
 					//如果这个方法没有返回值。或者返回true提交表单，如果false。不提交
 					//serialize() -> username = zhangsan&password=123
 					if (checkUsername() && checkPassword() && checkEmail() && checkName() && checkPhoneNumber() && checkBirthDay()) {
-						$.post("registerUser",$(this).serialize(),function(data){
+						$.post("user/register",$(this).serialize(),function(data){
 							if (data.flag) {
 								location.href="register_ok.html";
 							} else {

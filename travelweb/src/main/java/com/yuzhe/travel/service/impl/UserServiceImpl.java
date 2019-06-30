@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
         //send out a active email
 
         //if deploye using domain name
-        String content = "<a href='http://localhost:8080/travel/activeUser?code="+user.getCode()+ "'> click here to active Your [travel_website account] </a>";
+        String content = "<a href='http://localhost:8080/travel/user/active?code="+user.getCode()+ "'> click here to active Your [travel_website account] </a>";
         MailUtils.sendMail(user.getEmail(), content, "active email");
         return true;
     }
