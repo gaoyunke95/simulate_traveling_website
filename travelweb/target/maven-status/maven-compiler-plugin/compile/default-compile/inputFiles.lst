@@ -17,6 +17,7 @@
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/domain/Route.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/domain/Seller.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/UserDao.java
+/Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/web/servlet/ExitServlet.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/web/servlet/ActiveUserServlet.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/web/filter/CharchaterFilter.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/domain/Category.java

@@ -13,6 +13,7 @@ com/yuzhe/travel/util/JDBCUtils.class
 com/yuzhe/travel/util/Md5Util.class
 com/yuzhe/travel/web/filter/CharchaterFilter.class
 com/yuzhe/travel/service/impl/UserServiceImpl.class
+com/yuzhe/travel/web/servlet/ExitServlet.class
 com/yuzhe/travel/web/servlet/CheckCodeServlet.class
 com/yuzhe/travel/util/JedisUtil.class
 com/yuzhe/travel/domain/ResultInfo.class

@@ -43,12 +43,12 @@ public class LoginUserServlet extends HttpServlet {
             info.setErrorMsg("Wrong Username or Password");
         }
 
-        if(u != null && (!"Y".equals(u.getCode()))){
+        if(u != null && (!"Y".equals(u.getStatus()))){
             info.setFlag(false);
             info.setErrorMsg("Your account haven't been active, please active first");
         }
 
-        if(u != null && "Y".equals(u.getCode())){
+        if(u != null && "Y".equals(u.getStatus())){
             request.getSession().setAttribute("user",u);
             info.setFlag(true);
         }
