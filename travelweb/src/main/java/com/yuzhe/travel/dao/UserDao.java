@@ -22,11 +22,25 @@ public interface UserDao {
     public User findByCode(String code);
 
     /**
+     * find user by username and password;
+     * @param username
+     * @param password
+     * @return
+     */
+    public User findByUsernameAndPassword(String username, String password);
+
+    /**
      * save user info
      * @param user
      */
     public void save(User user);
 
+    /**
+     * update the account status after being active
+     * @param user
+     */
     public void updateStatus(User user);
+
+
 
 }

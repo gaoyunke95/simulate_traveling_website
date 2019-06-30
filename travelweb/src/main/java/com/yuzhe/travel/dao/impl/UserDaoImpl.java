@@ -13,6 +13,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class UserDaoImpl implements UserDao {
     private JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
 
+    /**
+     * find user by username
+     * @param username
+     * @return
+     */
     @Override
     public User findByUsername(String username) {
 
@@ -37,6 +42,24 @@ public class UserDaoImpl implements UserDao {
         try {
             String sql = "select * from tab_user where code = ?";
             user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), code);
+        } catch (Exception e) {
+
+        }
+        return user;
+    }
+
+    /**
+     * find user by username and password
+     * @param username
+     * @param password
+     * @return
+     */
+    @Override
+    public User findByUsernameAndPassword(String username, String password) {
+        User user = null;
+        try {
+            String sql = "select * from tab_user where username = ? and password = ?";
+            user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), username, password);
         } catch (Exception e) {
 
         }

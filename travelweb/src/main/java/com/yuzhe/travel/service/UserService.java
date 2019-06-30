@@ -14,5 +14,18 @@ public interface UserService {
      * @return
      */
     public boolean register(User user);
+
+    /**
+     * active the account by the code;
+     * @param code
+     * @return
+     */
     public boolean active(String code);
+
+    /**
+     * login method
+     * @param user
+     * @return
+     */
+    public User login(User user);
 }
