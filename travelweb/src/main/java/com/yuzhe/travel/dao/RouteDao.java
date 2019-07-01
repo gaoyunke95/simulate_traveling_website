@@ -16,7 +16,7 @@ public interface RouteDao {
      * @param cid
      * @return
      */
-    public int findTotalCount(int cid);
+    public int findTotalCount(int cid, String rname);
 
     /**
      * base on cid, and start, and pageSize to find out the currpage list collection of records;
@@ -25,5 +25,5 @@ public interface RouteDao {
      * @param pageSize
      * @return
      */
-    public List<Route> findByPage(int cid, int start, int pageSize);
+    public List<Route> findByPage(int cid, int start, int pageSize, String rname);
 }

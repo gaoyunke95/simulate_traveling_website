@@ -9,5 +9,5 @@ import com.yuzhe.travel.domain.Route;
  */
 public interface RouteService {
 
-    public PageBean<Route> pageQuery(int cid, int currPage, int pageSize);
+    public PageBean<Route> pageQuery(int cid, int currPage, int pageSize, String rname);
 }

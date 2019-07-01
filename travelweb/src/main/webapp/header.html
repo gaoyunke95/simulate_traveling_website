@@ -22,8 +22,8 @@
 
             $("#search_button").click(function () {
                 var rname = $("#search_input").val();
-                var cid = getComputedStyle(rname);
-                location.href="http://localhost/travel/route_list.html?cid="+cid+"&rname="+rname;
+                var cid = getParameter("cid");
+                location.href="http://localhost:8080/travel/route_list.html?cid="+cid+"&rname="+rname;
             });
 
         });
@@ -55,7 +55,7 @@
                     <a href="/"><img src="images/logo.jpg" alt=""></a>
                 </div>
                 <div class="search">
-                    <input name="" type="text" placeholder="请输入路线名称" class="search_input" autocomplete="off">
+                    <input id="search_input" name="" type="text" placeholder="请输入路线名称" class="search_input" autocomplete="off">
                     <a id="search_button" href="javascript:;" class="search-button">搜索</a>
                 </div>
                 <div class="hottel">

@@ -16,16 +16,16 @@ public class RouteServiceImpl implements RouteService {
     private RouteDao routeDao = new RouteDaoImpl();
 
     @Override
-    public PageBean<Route> pageQuery(int cid, int currPage, int pageSize) {
+    public PageBean<Route> pageQuery(int cid, int currPage, int pageSize, String rname) {
         PageBean<Route> pb = new PageBean<Route>();
         pb.setCurrPage(currPage);
         pb.setPageSize(pageSize);
 
-        int totalCount = routeDao.findTotalCount(cid);
+        int totalCount = routeDao.findTotalCount(cid, rname);
         pb.setTotalCount(totalCount);
 
         int start = (currPage - 1) * pageSize;
-        List<Route> list = routeDao.findByPage(cid, start, pageSize);
+        List<Route> list = routeDao.findByPage(cid, start, pageSize, rname);
         pb.setList(list);
 
         int totalPage = totalCount % pageSize == 0 ? totalCount / pageSize : (totalCount / pageSize) + 1;
