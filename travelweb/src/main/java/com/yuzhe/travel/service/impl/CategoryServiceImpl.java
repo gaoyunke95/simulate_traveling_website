@@ -6,6 +6,7 @@ import com.yuzhe.travel.domain.Category;
 import com.yuzhe.travel.service.CategoryService;
 import com.yuzhe.travel.util.JedisUtil;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Tuple;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class CategoryServiceImpl implements CategoryService {
 
         Jedis jedis = JedisUtil.getJedis();
         //2.get sortedset
-        Set<String> categories = jedis.zrange("category", 0, -1);
+        Set<Tuple> categories = jedis.zrangeWithScores("category", 0, -1);
         List<Category> cs = null;
 
         if(categories == null || categories.size() == 0){
@@ -37,9 +38,10 @@ public class CategoryServiceImpl implements CategoryService {
         } else {
             //the redis return back is set, convert the set to arraylist;
             cs = new ArrayList<>();
-            for (String name : categories){
+            for (Tuple tuple : categories){
                 Category category = new Category();
-                category.setCname(name);
+                category.setCname(tuple.getElement());
+                category.setCid((int)tuple.getScore());
                 cs.add(category);
             }
 

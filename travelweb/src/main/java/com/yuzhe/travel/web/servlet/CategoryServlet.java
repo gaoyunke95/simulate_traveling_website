@@ -26,9 +26,6 @@ public class CategoryServlet extends BaseServlet {
 
         List<Category> cs = service.findAll();
 
-        for(int i = 0; i < cs.size(); i++){
-            System.out.println(cs.get(i).getCname());
-        }
         //.serialize json
         /*
         ObjectMapper mapper = new ObjectMapper();
