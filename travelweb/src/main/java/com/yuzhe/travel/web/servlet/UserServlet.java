@@ -7,6 +7,7 @@ import com.yuzhe.travel.service.UserService;
 import com.yuzhe.travel.service.impl.UserServiceImpl;
 import org.apache.commons.beanutils.BeanUtils;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,10 +43,12 @@ public class UserServlet extends BaseServlet {
             info.setFlag(false);
             info.setErrorMsg("Wrong Verification Code");
 
-            ObjectMapper mapper = new ObjectMapper();
-            String json = mapper.writeValueAsString(info);
+            //ObjectMapper mapper = new ObjectMapper();
+
+/*            String json = writeValueAsString(info);
             response.setContentType("application/json;charset=utf-8");
-            response.getWriter().write(json);
+            response.getWriter().write(json);*/
+            writeValue(response, info);
             return ;
         }
 
@@ -78,10 +81,11 @@ public class UserServlet extends BaseServlet {
             info.setErrorMsg("Register Failed: User Already Exists");
         }
 
-        ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writeValueAsString(info);
+        //ObjectMapper mapper = new ObjectMapper();
+/*        String json = writeValueAsString(info);
         response.setContentType("application/json;charset=utf-8");
-        response.getWriter().write(json);
+        response.getWriter().write(json);*/
+        writeValue(response, info);
     }
 
     public void active(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -136,9 +140,12 @@ public class UserServlet extends BaseServlet {
             info.setFlag(true);
         }
 
+/*
         ObjectMapper mapper = new ObjectMapper();
         response.setContentType("application/json;charset=utf-8");
-        mapper.writeValue(response.getOutputStream(),info);
+        mapper.writeValue(response.getOutputStream(),info);*/
+
+        writeValue(response, info);
     }
 
 
@@ -151,9 +158,11 @@ public class UserServlet extends BaseServlet {
     public void findUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Object user = request.getSession().getAttribute("user");
 
-        ObjectMapper mapper = new ObjectMapper();
+/*        ObjectMapper mapper = new ObjectMapper();
         response.setContentType("application/json;charset=utf-8");
-        mapper.writeValue(response.getOutputStream(),user);
+        mapper.writeValue(response.getOutputStream(),user);*/
+
+        writeValue(response, user);
     }
 
 }
