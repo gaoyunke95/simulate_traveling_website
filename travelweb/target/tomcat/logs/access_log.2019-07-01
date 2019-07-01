@@ -723,3 +723,17 @@
 0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:32:56 -0400] "GET /travel/css/bootstrap.min.css.map HTTP/1.1" 404 1015 http-bio-8080-exec-8 11
 0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:32:57 -0400] "GET /travel/user/findUser HTTP/1.1" 200 4 http-bio-8080-exec-8 3
 0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:32:57 -0400] "GET /travel/category/findAll HTTP/1.1" 200 247 http-bio-8080-exec-8 17
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:05 -0400] "GET /travel/css/bootstrap.min.css.map HTTP/1.1" 404 1015 http-bio-8080-exec-3 1
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:05 -0400] "GET /travel/user/findUser HTTP/1.1" 200 4 http-bio-8080-exec-3 1
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:05 -0400] "GET /travel/category/findAll HTTP/1.1" 200 247 http-bio-8080-exec-3 3
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:14 -0400] "GET /travel/route_list.html?cid=null&rname=%E8%A5%BF%E5%AE%89 HTTP/1.1" 200 19949 http-bio-8080-exec-3 1
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:15 -0400] "GET /travel/route/pageQuery?cid=null&currPage=&rname=%E8%A5%BF%E5%AE%89 HTTP/1.1" 200 3123 http-bio-8080-exec-3 33
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:15 -0400] "GET /travel/user/findUser HTTP/1.1" 200 4 http-bio-8080-exec-3 1
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:15 -0400] "GET /travel/category/findAll HTTP/1.1" 200 247 http-bio-8080-exec-3 4
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:24 -0400] "GET /travel/route/pageQuery?cid=&currPage=2&rname=%E8%A5%BF%E5%AE%89 HTTP/1.1" 200 2962 http-bio-8080-exec-3 10
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:34 -0400] "GET /travel/route_list.html?cid=null&rname=%E6%98%A5%E8%8A%82 HTTP/1.1" 200 19949 http-bio-8080-exec-3 1
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:35 -0400] "GET /travel/route/pageQuery?cid=null&currPage=&rname=%E6%98%A5%E8%8A%82 HTTP/1.1" 200 3249 http-bio-8080-exec-3 13
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:35 -0400] "GET /travel/user/findUser HTTP/1.1" 200 4 http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:35 -0400] "GET /travel/category/findAll HTTP/1.1" 200 247 http-bio-8080-exec-3 2
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:39 -0400] "GET /travel/route/pageQuery?cid=&currPage=6&rname=%E6%98%A5%E8%8A%82 HTTP/1.1" 200 3336 http-bio-8080-exec-3 8
+0:0:0:0:0:0:0:1 - - [01/Jul/2019:18:35:39 -0400] "GET /travel/img/product/small/m3a0b210f47a778170efe260bd75a2fd01.jpg HTTP/1.1" 200 15819 http-bio-8080-exec-3 2
