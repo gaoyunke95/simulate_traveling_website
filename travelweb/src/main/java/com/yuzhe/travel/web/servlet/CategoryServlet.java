@@ -31,7 +31,10 @@ public class CategoryServlet extends BaseServlet {
         ObjectMapper mapper = new ObjectMapper();
         response.setContentType("application/json;charset=utf-8");
         mapper.writeValue(response.getOutputStream(),cs);*/
+        for( int i = 0; i < cs.size(); i++){
+            System.out.println(cs.get(i).getCid() + " : " + cs.get(i).getCname());
 
+        }
         writeValue(response, cs);
 
     }
