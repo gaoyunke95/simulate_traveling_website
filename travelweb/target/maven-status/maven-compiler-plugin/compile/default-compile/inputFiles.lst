@@ -6,6 +6,7 @@
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/CategoryDao.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/util/JDBCUtils.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/util/UuidUtil.java
+/Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/impl/FavoriteDaoImpl.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/domain/User.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/util/MailUtils.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/service/impl/RouteServiceImpl.java
@@ -16,7 +17,10 @@
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/impl/RouteImgDaoImpl.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/util/Md5Util.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/domain/Route.java
+/Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/FavoriteDao.java
+/Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/service/FavoriteService.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/impl/RouteDaoImpl.java
+/Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/service/impl/FavoriteServiceImpl.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/web/servlet/ActiveUserServlet.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/RouteImgDao.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/domain/PageBean.java

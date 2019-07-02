@@ -1,20 +1,16 @@
 package com.yuzhe.travel.web.servlet;
 
-import com.yuzhe.travel.domain.PageBean;
-import com.yuzhe.travel.domain.Route;
-import com.yuzhe.travel.domain.RouteImg;
-import com.yuzhe.travel.domain.Seller;
+import com.yuzhe.travel.domain.*;
+import com.yuzhe.travel.service.FavoriteService;
 import com.yuzhe.travel.service.RouteService;
+import com.yuzhe.travel.service.impl.FavoriteServiceImpl;
 import com.yuzhe.travel.service.impl.RouteServiceImpl;
 
-import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * @author Henry Gao
@@ -22,9 +18,12 @@ import java.util.List;
  */
 @WebServlet("/route/*")
 public class RouteServlet extends BaseServlet {
-    private RouteService service = new RouteServiceImpl();
+    private RouteService routeService = new RouteServiceImpl();
+    private FavoriteService favoriteService = new FavoriteServiceImpl();
+
     /**
      * page Query
+     *
      * @param request
      * @param response
      * @throws ServletException
@@ -36,7 +35,7 @@ public class RouteServlet extends BaseServlet {
         String cidStr = request.getParameter("cid");
         String rname = request.getParameter("rname");
 
-        rname = new String(rname.getBytes("iso-8859-1"),"utf-8");
+        rname = new String(rname.getBytes("iso-8859-1"), "utf-8");
 
         int cid = 0;
         if (cidStr != null && cidStr.length() > 0 && !"null".equals(cidStr)) {
@@ -61,7 +60,7 @@ public class RouteServlet extends BaseServlet {
             rname = "";
         }
 
-        PageBean<Route> pb = service.pageQuery(cid, currPage, pageSize, rname);
+        PageBean<Route> pb = routeService.pageQuery(cid, currPage, pageSize, rname);
         writeValue(response, pb);
 
 
@@ -69,6 +68,7 @@ public class RouteServlet extends BaseServlet {
 
     /**
      * base on the rid searching for the detail of a route
+     *
      * @param request
      * @param response
      * @throws ServletException
@@ -78,8 +78,49 @@ public class RouteServlet extends BaseServlet {
         String ridStr = request.getParameter("rid");
         int rid = Integer.parseInt(ridStr);
 
-        Route route = service.findOneByRid(rid);
+        Route route = routeService.findOneByRid(rid);
 
         writeValue(response, route);
+    }
+
+
+    /**
+     * determine if login user has the favorite routes or not ;
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void isFavorite(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String rid = request.getParameter("rid");
+
+        User user = (User) request.getSession().getAttribute("user");
+
+        int uid;
+        if (user == null) {
+            uid = 0;
+        } else {
+            uid = user.getUid();
+        }
+
+        boolean flag = favoriteService.isFavorite(rid, uid);
+
+        writeValue(response, flag);
+    }
+
+    public void addFavorite(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String rid = request.getParameter("rid");
+
+        User user = (User) request.getSession().getAttribute("user");
+        int uid;
+        if (user == null) {
+            return ;
+        } else {
+            uid = user.getUid();
+        }
+
+        favoriteService.add(rid, uid);
+
     }
 }

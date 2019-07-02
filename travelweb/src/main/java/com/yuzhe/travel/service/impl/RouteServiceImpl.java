@@ -1,8 +1,10 @@
 package com.yuzhe.travel.service.impl;
 
+import com.yuzhe.travel.dao.FavoriteDao;
 import com.yuzhe.travel.dao.RouteDao;
 import com.yuzhe.travel.dao.RouteImgDao;
 import com.yuzhe.travel.dao.SellerDao;
+import com.yuzhe.travel.dao.impl.FavoriteDaoImpl;
 import com.yuzhe.travel.dao.impl.RouteDaoImpl;
 import com.yuzhe.travel.dao.impl.RouteImgDaoImpl;
 import com.yuzhe.travel.dao.impl.SellerDaoImpl;
@@ -22,6 +24,7 @@ public class RouteServiceImpl implements RouteService {
     private RouteDao routeDao = new RouteDaoImpl();
     private RouteImgDao routeImgDao = new RouteImgDaoImpl();
     private SellerDao sellerDao = new SellerDaoImpl();
+    private FavoriteDao favoriteDao = new FavoriteDaoImpl();
 
     @Override
     public PageBean<Route> pageQuery(int cid, int currPage, int pageSize, String rname) {
@@ -59,6 +62,8 @@ public class RouteServiceImpl implements RouteService {
         Seller seller = sellerDao.findSellerBySid(route.getSid());
         route.setSeller(seller);
 
+        int count = favoriteDao.findCountByRid(route.getRid());
+        route.setCount(count);
         return route;
     }
 
