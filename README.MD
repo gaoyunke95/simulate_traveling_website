@@ -24,4 +24,4 @@ This is a small project that simulate a traveling website Using JAVAWEB technolo
 * NOSQL Database: Redis, Jedis
 * Reflection
 * BeanUtil
-
+* Jackson : Using for convert json;
