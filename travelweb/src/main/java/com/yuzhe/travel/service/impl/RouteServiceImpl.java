@@ -1,9 +1,15 @@
 package com.yuzhe.travel.service.impl;
 
 import com.yuzhe.travel.dao.RouteDao;
+import com.yuzhe.travel.dao.RouteImgDao;
+import com.yuzhe.travel.dao.SellerDao;
 import com.yuzhe.travel.dao.impl.RouteDaoImpl;
+import com.yuzhe.travel.dao.impl.RouteImgDaoImpl;
+import com.yuzhe.travel.dao.impl.SellerDaoImpl;
 import com.yuzhe.travel.domain.PageBean;
 import com.yuzhe.travel.domain.Route;
+import com.yuzhe.travel.domain.RouteImg;
+import com.yuzhe.travel.domain.Seller;
 import com.yuzhe.travel.service.RouteService;
 
 import java.util.List;
@@ -14,6 +20,8 @@ import java.util.List;
  */
 public class RouteServiceImpl implements RouteService {
     private RouteDao routeDao = new RouteDaoImpl();
+    private RouteImgDao routeImgDao = new RouteImgDaoImpl();
+    private SellerDao sellerDao = new SellerDaoImpl();
 
     @Override
     public PageBean<Route> pageQuery(int cid, int currPage, int pageSize, String rname) {
@@ -33,4 +41,26 @@ public class RouteServiceImpl implements RouteService {
 
         return pb;
     }
+
+    /**
+     * find a route's detail information base on rid
+     * @param rid
+     * @return
+     */
+    @Override
+    public Route findOneByRid(int rid) {
+        Route route = routeDao.findOneByRid(rid);
+        System.out.println("rid : "+route.getRid());
+        System.out.println("sid : "+route.getSid());
+
+        List<RouteImg> routeImgs = routeImgDao.findImgByRid(route.getRid());
+        route.setRouteImgList(routeImgs);
+
+        Seller seller = sellerDao.findSellerBySid(route.getSid());
+        route.setSeller(seller);
+
+        return route;
+    }
+
+
 }

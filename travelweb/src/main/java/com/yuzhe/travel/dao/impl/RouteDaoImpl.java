@@ -70,4 +70,12 @@ public class RouteDaoImpl implements RouteDao {
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Route>(Route.class), params.toArray());
 
     }
+
+    @Override
+    public Route findOneByRid(int rid) {
+        String sql = "select * from tab_route where rid = ?";
+        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<Route>(Route.class), rid);
+    }
+
+
 }

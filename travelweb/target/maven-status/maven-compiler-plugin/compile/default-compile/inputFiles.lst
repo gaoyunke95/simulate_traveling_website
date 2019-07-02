@@ -1,5 +1,6 @@
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/domain/RouteImg.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/domain/ResultInfo.java
+/Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/impl/SellerDaoImpl.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/impl/UserDaoImpl.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/domain/Favorite.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/CategoryDao.java
@@ -12,10 +13,12 @@
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/web/servlet/LoginUserServlet.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/RouteDao.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/web/servlet/CheckCodeServlet.java
+/Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/impl/RouteImgDaoImpl.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/util/Md5Util.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/domain/Route.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/impl/RouteDaoImpl.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/web/servlet/ActiveUserServlet.java
+/Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/RouteImgDao.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/domain/PageBean.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/service/impl/CategoryServiceImpl.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/domain/Category.java
@@ -24,6 +27,7 @@
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/service/RouteService.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/web/servlet/RouteServlet.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/service/CategoryService.java
+/Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/dao/SellerDao.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/service/impl/UserServiceImpl.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/web/servlet/RegisterUserServlet.java
 /Users/yunkegao/IdeaProjects/travelWeb/travelweb/src/main/java/com/yuzhe/travel/web/servlet/CategoryServlet.java

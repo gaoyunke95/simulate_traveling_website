@@ -2,6 +2,8 @@ package com.yuzhe.travel.web.servlet;
 
 import com.yuzhe.travel.domain.PageBean;
 import com.yuzhe.travel.domain.Route;
+import com.yuzhe.travel.domain.RouteImg;
+import com.yuzhe.travel.domain.Seller;
 import com.yuzhe.travel.service.RouteService;
 import com.yuzhe.travel.service.impl.RouteServiceImpl;
 
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author Henry Gao
@@ -64,5 +67,19 @@ public class RouteServlet extends BaseServlet {
 
     }
 
+    /**
+     * base on the rid searching for the detail of a route
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void findOneByRid(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String ridStr = request.getParameter("rid");
+        int rid = Integer.parseInt(ridStr);
 
+        Route route = service.findOneByRid(rid);
+
+        writeValue(response, route);
+    }
 }
