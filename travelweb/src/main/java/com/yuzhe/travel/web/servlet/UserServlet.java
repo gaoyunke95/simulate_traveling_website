@@ -110,6 +110,33 @@ public class UserServlet extends BaseServlet {
     }
 
     public void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+
+        String check = request.getParameter("check");
+        HttpSession session = request.getSession();
+
+
+        String checkcode_server = (String) session.getAttribute("CHECKCODE_SERVER");
+        session.removeAttribute("CHECKCODE_SERVER");
+
+        if(checkcode_server == null || !checkcode_server.equalsIgnoreCase(check)){
+            ResultInfo info = new ResultInfo();
+            info.setFlag(false);
+            info.setErrorMsg("Wrong Verification Code");
+            writeValue(response, info);
+            return ;
+        }
+
+        User checkU = (User) session.getAttribute("user");
+        if (checkU != null){
+            ResultInfo info = new ResultInfo();
+            info.setFlag(false);
+            info.setErrorMsg(checkU.getName() + " already login");
+            writeValue(response, info);
+            return ;
+        }
+
         Map<String, String[]> map = request.getParameterMap();
         User user = new User();
 
@@ -164,5 +191,6 @@ public class UserServlet extends BaseServlet {
 
         writeValue(response, user);
     }
+
 
 }

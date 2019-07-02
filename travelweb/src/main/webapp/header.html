@@ -5,7 +5,14 @@
             $.get("/travel/user/findUser",{},function(data){
                 var msg = "Welcome! " + data.name;
                 $("#username_span").html(msg);
+
+                if(data != null){
+                    $("#login_btn").removeAttr("href");
+                    $("#login_btn").attr("disabled", "disabled");
+
+                }
             });
+
 
             //searching for category
             $.get("/travel/category/findAll",{},function(data){
@@ -26,7 +33,9 @@
                 location.href="http://localhost:8080/travel/route_list.html?cid="+cid+"&rname="+rname;
             });
 
+
         });
+
     </script>
 
 
@@ -38,7 +47,7 @@
         <div class="shortcut">
             <!-- 未登录状态  -->
             <div class="login_out">
-                <a href="login.html">登录</a>
+                <a id="login_btn" href="login.html">登录</a>
                 <a href="register.html">注册</a>
             </div>
             <!-- 登录状态  -->
